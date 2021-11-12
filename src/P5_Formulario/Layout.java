@@ -24,7 +24,10 @@ public class Layout extends JFrame {
 
 
     public Layout() {
-
+        initPantalla();
+        initTarjetas();
+        initBotones();
+        initPantalla2();
     }
 
     //
