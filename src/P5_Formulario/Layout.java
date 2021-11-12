@@ -26,4 +26,6 @@ public class Layout extends JFrame {
     public Layout() {
 
     }
+
+    //
 }
