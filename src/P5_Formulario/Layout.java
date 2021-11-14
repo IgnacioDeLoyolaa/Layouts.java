@@ -29,6 +29,30 @@ public class Layout extends JFrame {
         initBotones();
         initPantalla2();
     }
+    public void paint(Graphics g) {
+        super.paint(g);
+        g2d = (Graphics2D) g;
+        GradientPaint gp = new GradientPaint(900, 100, Color.BLUE, 770, 900, Color.RED);
+        g2d.setPaint(gp);
+        g2d.fillRect(0, 0, 90, 350);
+
+    }
+
+    private void initTarjeta1() {
+        tarjeta1.setLayout(null);
+        textoarea = new JTextArea("Bienvenido estos son los pasos del formulario \n " +
+                "1.Debes rellenar los campos de nombre,email y contraseÃ±a \n " +
+                "2.Debes seleccionar el campo de pais y provincia \n " +
+                "3.Te aÃ±ade todos los datos en un fichero");
+        textoarea.setBounds(30, 10, 350, 250);
+        textoarea.setLineWrap(true);
+        textoarea.setEditable(false);
+        textoarea.setBackground(getContentPane().getBackground());
+        barratexto.add(textoarea);
+        tarjeta1.add(barratexto);
+        tarjeta1.add(textoarea);
+
+    }
 
     //
 }
