@@ -239,7 +239,55 @@ public class Layout extends JFrame {
                             System.exit(0);
                         }
                     });
+                    private void initPantalla() {
 
+                        tarjetas = new CardLayout();
+                        panelTarjetas = new JPanel();
+                        panelTarjetas.setLayout(tarjetas);
+
+                        //Creo el panel de la izquierda y luego le aÃ±ado una imagen
+                        JPanel panelIzq = new JPanel();
+                        panelIzq.setPreferredSize(new Dimension(80, 100));
+                        add(panelIzq, WEST);
+                        //Situo el borderlayout de los botones
+                        JPanel barrabotones = new JPanel();
+                        barrabotones.setPreferredSize(new Dimension(150, 50));
+                        barrabotones.add(salir = new JButton("salir"));
+                        barrabotones.add(anterior = new JButton("anterior"));
+                        barrabotones.add(siguiente = new JButton("siguiente"));
+                        add(barrabotones, SOUTH);
+
+                        //Creo otro Jpanel para el texto
+                        barratexto = new JPanel();
+                        barratexto.setLayout(null);
+                        add(barratexto, textoarea);
+
+                    }
+                    private void initTarjetas() {
+
+                        tarjeta1 = new JPanel();
+                        tarjeta2 = new JPanel();
+                        tarjeta3 = new JPanel();
+                        tarjeta4 = new JPanel();
+                        tarjeta5 = new JPanel();
+
+                        initTarjeta1();
+                        initTarjeta2();
+                        initTarjeta3();
+                        initTarjeta4();
+                        initTarjeta5();
+
+                        panelTarjetas.add(tarjeta1, "Tarjeta1");
+                        panelTarjetas.add(tarjeta2, "Tarjeta2");
+                        panelTarjetas.add(tarjeta3, "Tarjeta3");
+                        panelTarjetas.add(tarjeta4, "Tarjeta4");
+                        panelTarjetas.add(tarjeta5, "Tarjeta5");
+
+                        tarjetas.show(panelTarjetas, "Tarjeta1");
+
+                        add(panelTarjetas, BorderLayout.CENTER);
+
+                    }
                     private void initPantalla2() {
 
                         setSize(500, 400);
